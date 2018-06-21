@@ -6,6 +6,7 @@ public class lineCreatorScript : MonoBehaviour {
     public GameObject linePrefab;
     Line activeLine;
     HUDScript hud;
+    public float lineDuration = 2f;
 
     private void Start()
     {
@@ -21,7 +22,7 @@ public class lineCreatorScript : MonoBehaviour {
             if(activeLine == null)
             {
                 GameObject lineObj = Instantiate(linePrefab);
-                Destroy(lineObj, 0.8f);
+                Destroy(lineObj, lineDuration);
                 activeLine = lineObj.GetComponent<Line>();
                 hud.IncreaseLine(-1);
             }
